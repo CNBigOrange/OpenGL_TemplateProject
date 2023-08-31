@@ -1,0 +1,146 @@
+﻿D:\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1101,5): warning MSB8027: 名为 Torus.cpp 的两个或更多文件将生成到同一位置的输出。这会导致错误的生成结果。   调用的文件是 ShapeClass\Torus.cpp, Torus.cpp。
+  10_More_Stack_Mat4_5.0.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  11_load_texture_6.0.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  12_Generate_Sphere.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  13_Generate_Torus.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  14_Load_Mesh.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  15_Light_ADS.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\15_Light_ADS.cpp(148,20): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  16_Light_ADS_Texture.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\16_Light_ADS_Texture.cpp(15,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\16_Light_ADS_Texture.cpp(168,48): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  17_Light_Shadow.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\17_Light_Shadow.cpp(19,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\17_Light_Shadow.cpp(308,46): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\17_Light_Shadow.cpp(402,47): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  18_SkyBoxCubex.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\18_SkyBoxCubex.cpp(14,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\18_SkyBoxCubex.cpp(149,41): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\18_SkyBoxCubex.cpp(183,44): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  19_ProcBump.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\19_ProcBump.cpp(152,44): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\19_ProcBump.cpp(155,20): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  20_NormalMappingMoon.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\20_NormalMappingMoon.cpp(15,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\20_NormalMappingMoon.cpp(186,44): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\20_NormalMappingMoon.cpp(190,16): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  21_NormalMapping.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\21_NormalMapping.cpp(15,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\21_NormalMapping.cpp(178,44): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  22_HeightMappedTerrain.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\22_HeightMappedTerrain.cpp(15,1): warning C4005: “numVBOs”: 宏重定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(18,1): message : 参见“numVBOs”的前一个定义
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\22_HeightMappedTerrain.cpp(178,44): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  3_DebugGLSL.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  2_DrawOnePoint.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  1_CreateWindow.cpp
+  4_LoadGLSL_Code.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  5_SimpleAnimation.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  6_First3D_Cube.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  7_More_3D_Cube2.0.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\7_More_3D_Cube2.0.cpp(81,28): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  正在生成代码...
+  正在编译...
+  8_More_3D_CubeInstance3.0.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  9_More_3D_ShapeInstance4.0.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  CommonLibrary.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.cpp(6,28): warning C4244: “参数”: 从“double”转换到“GLclampf”，可能丢失数据
+  ModelLoader.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\ModelLoader.cpp(99,72): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  Sphere.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Torus.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  ToolsLibrary.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Torus.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Utils.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+x64\Debug\Torus.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  OpenGL_TemplateProject2.vcxproj -> E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\x64\Debug\OpenGL_TemplateProject2.exe
