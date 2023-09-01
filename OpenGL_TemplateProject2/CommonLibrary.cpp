@@ -106,8 +106,30 @@ bool loadShader(GLuint vShader, GLuint fShader, const char* mvertShaderStr, cons
 	return true;
 }
 
+bool loadShader(GLuint vShader, GLuint fShader, GLuint tcs, GLuint tes, const char* mvertShaderStr, const char* mfragShaderStr, const char* tCS, const char* tES)
+{
+	//读取文本着色器代码
+	string vertShaderStr = readShaderSource(mvertShaderStr);
+	string fragShaderStr = readShaderSource(mfragShaderStr);
+	string tcsShaderStr = readShaderSource(tCS);
+	string tesShaderStr = readShaderSource(tES);
+
+	//将代码由string转化为char*
+	const char* vertShaderSrc = vertShaderStr.c_str();
+	const char* fragShaderSrc = fragShaderStr.c_str();
+	const char* tcsShaderSrc = tcsShaderStr.c_str();
+	const char* tesShaderSrc = tesShaderStr.c_str();
+
+	glShaderSource(vShader, 1, &vertShaderSrc, NULL);
+	glShaderSource(fShader, 1, &fragShaderSrc, NULL);
+	glShaderSource(tcs, 1, &tcsShaderSrc, NULL);
+	glShaderSource(tes, 1, &tesShaderSrc, NULL);
+
+	return true;
+}
+
 //检测OpenGL错误的示例
-GLuint createShaderProgram(int fun_id) {
+GLuint createShaderProgram(int fun_id,int tessllation ) {
 	GLint vertCompiled;
 	GLint fragCompiled;
 	GLint linked;
@@ -115,6 +137,10 @@ GLuint createShaderProgram(int fun_id) {
 	//OpenGL创建每个着色器对象（初始值为空）的时候，会返回一个整数ID作为后面引用它的序号
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
+	
+	GLuint tcShader = glCreateShader(GL_TESS_CONTROL_SHADER);
+	GLuint teShader = glCreateShader(GL_TESS_EVALUATION_SHADER);
+	
 	//glShaderSource将GLSL代码从字符串载入空着色器对象中
 	//参数一：用来存放着色器的着色器对象;参数二：着色器源代码中字符串数量；
 	//参数三：包含源代码的字符串指针；参数四：
@@ -216,12 +242,20 @@ GLuint createShaderProgram(int fun_id) {
 	case HEIGHT_MAPPING: {
 		loadShader(vShader, fShader, "vertShaderHeightMapping.glsl", "fragShaderHeightMapping.glsl");
 		break; }
+	case TESSELLATION_GRID_ONLY: {
+		loadShader(vShader, fShader, tcShader, teShader,
+			"vertShaderTess.glsl", "fragShaderTess.glsl","tessCShader.glsl","tessEShader.glsl");
+		break; }
 	default: {}
 	}
 
 
 	//glCompileShader()函数编译着色器
 	glCompileShader(vShader);
+	if (tessllation) {
+		glCompileShader(tcShader);
+		glCompileShader(teShader);
+	}
 	//捕获编译着色器时的错误
 	checkOpenGLError();
 	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);
@@ -243,7 +277,12 @@ GLuint createShaderProgram(int fun_id) {
 	GLuint vfProgram = glCreateProgram();
 	//将着色器加入程序对象
 	glAttachShader(vfProgram, vShader);
+	if (tessllation) {
+		glAttachShader(vfProgram, tcShader);
+		glAttachShader(vfProgram, teShader);
+	}
 	glAttachShader(vfProgram, fShader);
+
 	//请求GLSL编译器，以确保着色器和程序的兼容性
 	glLinkProgram(vfProgram);
 	//捕获链接着色器时的错误
@@ -253,6 +292,7 @@ GLuint createShaderProgram(int fun_id) {
 		cout << "linking failed" << endl;
 		printProgramLog(vfProgram);
 	}
+
 	return vfProgram;
 }
 

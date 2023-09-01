@@ -14,6 +14,8 @@
 using namespace std;
 
 //Vertex Array Object 顶点数组对象
+#define DISABLE 0
+#define ENABLE 1
 #define numVAOs 1
 #define numVBOs 2
 #define DEBUG_MODE 1
@@ -31,6 +33,7 @@ using namespace std;
 #define NORMAL_MAPPING 13
 #define NORMAL_MAPPING_MOON 14
 #define HEIGHT_MAPPING 15
+#define TESSELLATION_GRID_ONLY 16
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;
@@ -42,7 +45,7 @@ void printProgramLog(int prog);
 bool checkOpenGLError();
 
 GLuint createShaderProgram();
-GLuint createShaderProgram(int fun_id);
+GLuint createShaderProgram(int fun_id, int tessllation = DISABLE);
 //GLuint createShaderProgram(const char* VS,const char* FS);
 
 void init(GLFWwindow* window);

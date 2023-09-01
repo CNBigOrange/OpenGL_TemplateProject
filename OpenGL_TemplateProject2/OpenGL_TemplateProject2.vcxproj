@@ -165,6 +165,7 @@
     <ClCompile Include="20_NormalMappingMoon.cpp" />
     <ClCompile Include="21_NormalMapping.cpp" />
     <ClCompile Include="22_HeightMappedTerrain.cpp" />
+    <ClCompile Include="23_TessellationGridOnly.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />

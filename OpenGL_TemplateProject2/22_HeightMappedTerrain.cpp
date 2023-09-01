@@ -226,7 +226,7 @@ void display_light_HeightMapping(GLFWwindow* window, double currentTime) {
 }
 
 
-int main(void) {
+int main22(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
