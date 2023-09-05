@@ -128,6 +128,12 @@
     <ClCompile Include="23_TessellationGridOnly.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="24_TessellationBezier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="25_TessellationHeightMapped.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

@@ -246,6 +246,14 @@ GLuint createShaderProgram(int fun_id,int tessllation ) {
 		loadShader(vShader, fShader, tcShader, teShader,
 			"vertShaderTess.glsl", "fragShaderTess.glsl","tessCShader.glsl","tessEShader.glsl");
 		break; }
+	case TESSELLATION_BEZIER: {
+		loadShader(vShader, fShader, tcShader, teShader,
+			"vertShaderTessBezier.glsl", "fragShaderTessBezier.glsl", "tessBezierCShader.glsl", "tessBezierEShader.glsl");
+		break; }
+	case TESSELLATION_HEIGHT_MAPPED: {
+		loadShader(vShader, fShader, tcShader, teShader,
+			"vertShaderTessHeightMapping.glsl", "fragShaderTessHeightMapping.glsl", "tessHeightMappingCShader.glsl", "tessHeightMappingEShader.glsl");
+		break; }		
 	default: {}
 	}
 

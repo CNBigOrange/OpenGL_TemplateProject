@@ -34,6 +34,8 @@ using namespace std;
 #define NORMAL_MAPPING_MOON 14
 #define HEIGHT_MAPPING 15
 #define TESSELLATION_GRID_ONLY 16
+#define TESSELLATION_BEZIER 17
+#define TESSELLATION_HEIGHT_MAPPED 18
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;

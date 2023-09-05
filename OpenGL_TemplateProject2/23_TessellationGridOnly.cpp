@@ -71,11 +71,11 @@ void display_TessellationGridOnly(GLFWwindow* window, double currentTime) {
 	//glPolygonMode指定了如何格栅化图形
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);  // FILL or LINE
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	glDrawArrays(GL_PATCHES, 0, 16);
+	glDrawArrays(GL_PATCHES, 0, 16);//16为顶点数
 }
 
 
-int main(void) {
+int main23(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
