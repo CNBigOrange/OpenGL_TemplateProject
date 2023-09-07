@@ -15,7 +15,8 @@ using namespace std;
 
 //Vertex Array Object 顶点数组对象
 #define DISABLE 0
-#define ENABLE 1
+#define ENABLE_TESSELLATION 1
+#define ENABLE_GEOMETRY 1
 #define numVAOs 1
 #define numVBOs 2
 #define DEBUG_MODE 1
@@ -36,6 +37,9 @@ using namespace std;
 #define TESSELLATION_GRID_ONLY 16
 #define TESSELLATION_BEZIER 17
 #define TESSELLATION_HEIGHT_MAPPED 18
+#define TESSELLATION_HEIGHT_MAPPED_LIGHT 19
+#define TESSELLATION_HEIGHT_MAPPED_LOD 20
+#define GEOM_MOD_INFLATE 21
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;

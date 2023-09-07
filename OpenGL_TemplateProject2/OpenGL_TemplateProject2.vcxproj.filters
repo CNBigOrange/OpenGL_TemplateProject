@@ -134,6 +134,15 @@
     <ClCompile Include="25_TessellationHeightMapped.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="26_TessellationHeightMappedLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="27_TessellationHeightMappedLOD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="28_geomModInflate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

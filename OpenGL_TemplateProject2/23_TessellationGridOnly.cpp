@@ -36,7 +36,7 @@ namespace TessellationGridOnly {
 using namespace TessellationGridOnly;
 
 void init_TessellationGridOnly(GLFWwindow* window) {
-	renderingProgram2 = createShaderProgram(TESSELLATION_GRID_ONLY, ENABLE);
+	renderingProgram2 = createShaderProgram(TESSELLATION_GRID_ONLY, ENABLE_TESSELLATION);
 	cameraX = 0.0f; cameraY = 0.0f; cameraZ = 120.0f;
 	terLocX = 0.0f; terLocY = 0.0f; terLocZ = 0.0f;
 

@@ -168,6 +168,9 @@
     <ClCompile Include="23_TessellationGridOnly.cpp" />
     <ClCompile Include="24_TessellationBezier.cpp" />
     <ClCompile Include="25_TessellationHeightMapped.cpp" />
+    <ClCompile Include="26_TessellationHeightMappedLight.cpp" />
+    <ClCompile Include="27_TessellationHeightMappedLOD.cpp" />
+    <ClCompile Include="28_geomModInflate.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />

@@ -128,8 +128,27 @@ bool loadShader(GLuint vShader, GLuint fShader, GLuint tcs, GLuint tes, const ch
 	return true;
 }
 
+bool loadShader(GLuint vShader, GLuint fShader, GLuint gShader, const char* mvertShaderStr, const char* mfragShaderStr, const char* mgemoShader)
+{
+	//读取文本着色器代码
+	string vertShaderStr = readShaderSource(mvertShaderStr);
+	string fragShaderStr = readShaderSource(mfragShaderStr);
+	string gemoShaderStr = readShaderSource(mgemoShader);
+
+	//将代码由string转化为char*
+	const char* vertShaderSrc = vertShaderStr.c_str();
+	const char* fragShaderSrc = fragShaderStr.c_str();
+	const char* gemoShaderSrc = gemoShaderStr.c_str();
+
+	glShaderSource(vShader, 1, &vertShaderSrc, NULL);
+	glShaderSource(fShader, 1, &fragShaderSrc, NULL);
+	glShaderSource(gShader, 1, &gemoShaderSrc, NULL);
+
+	return true;
+}
+
 //检测OpenGL错误的示例
-GLuint createShaderProgram(int fun_id,int tessllation ) {
+GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	GLint vertCompiled;
 	GLint fragCompiled;
 	GLint linked;
@@ -137,6 +156,7 @@ GLuint createShaderProgram(int fun_id,int tessllation ) {
 	//OpenGL创建每个着色器对象（初始值为空）的时候，会返回一个整数ID作为后面引用它的序号
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
+	GLuint gShader = glCreateShader(GL_GEOMETRY_SHADER);
 	
 	GLuint tcShader = glCreateShader(GL_TESS_CONTROL_SHADER);
 	GLuint teShader = glCreateShader(GL_TESS_EVALUATION_SHADER);
@@ -253,17 +273,32 @@ GLuint createShaderProgram(int fun_id,int tessllation ) {
 	case TESSELLATION_HEIGHT_MAPPED: {
 		loadShader(vShader, fShader, tcShader, teShader,
 			"vertShaderTessHeightMapping.glsl", "fragShaderTessHeightMapping.glsl", "tessHeightMappingCShader.glsl", "tessHeightMappingEShader.glsl");
-		break; }		
+		break; }	
+	case TESSELLATION_HEIGHT_MAPPED_LIGHT: {
+		loadShader(vShader, fShader, tcShader, teShader,
+			"vertShaderTessHeightMappingLight.glsl", "fragShaderTessHeightMappingLight.glsl", "tessHeightMappingCShaderLight.glsl", "tessHeightMappingEShaderLight.glsl");
+		break; }
+	case TESSELLATION_HEIGHT_MAPPED_LOD: {
+		loadShader(vShader, fShader, tcShader, teShader,
+			"vertShaderTessHeightMappingLight.glsl", "fragShaderTessHeightMappingLight.glsl", "tessHeightMappingCShaderLOD.glsl", "tessHeightMappingEShaderLight.glsl");
+		break; }
+	case GEOM_MOD_INFLATE: {
+		loadShader(vShader, fShader, gShader, 
+			"vertShaderGeomModInflate.glsl", "fragShaderGeomModInflate.glsl", "geomShaderModInflate.glsl");
+		break; }
 	default: {}
 	}
 
-
 	//glCompileShader()函数编译着色器
 	glCompileShader(vShader);
-	if (tessllation) {
+	if (enable_shader == ENABLE_TESSELLATION) {
 		glCompileShader(tcShader);
 		glCompileShader(teShader);
 	}
+	if (enable_shader == ENABLE_GEOMETRY) {
+		glCompileShader(gShader);
+	}
+
 	//捕获编译着色器时的错误
 	checkOpenGLError();
 	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);
@@ -285,10 +320,15 @@ GLuint createShaderProgram(int fun_id,int tessllation ) {
 	GLuint vfProgram = glCreateProgram();
 	//将着色器加入程序对象
 	glAttachShader(vfProgram, vShader);
-	if (tessllation) {
+	if (enable_shader == ENABLE_TESSELLATION) {
 		glAttachShader(vfProgram, tcShader);
 		glAttachShader(vfProgram, teShader);
 	}
+
+	if (enable_shader == ENABLE_GEOMETRY) {
+		glAttachShader(vfProgram, gShader);
+	}
+
 	glAttachShader(vfProgram, fShader);
 
 	//请求GLSL编译器，以确保着色器和程序的兼容性
@@ -300,7 +340,6 @@ GLuint createShaderProgram(int fun_id,int tessllation ) {
 		cout << "linking failed" << endl;
 		printProgramLog(vfProgram);
 	}
-
 	return vfProgram;
 }
 
