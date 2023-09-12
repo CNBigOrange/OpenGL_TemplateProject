@@ -155,6 +155,9 @@
     <ClCompile Include="32_Blending.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="33_Clip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

@@ -176,6 +176,7 @@
     <ClCompile Include="30_geomModChange.cpp" />
     <ClCompile Include="31_Fog.cpp" />
     <ClCompile Include="32_Blending.cpp" />
+    <ClCompile Include="33_Clip.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />

@@ -293,7 +293,7 @@ void display_Blending(GLFWwindow* window, double currentTime) {
 	glDisable(GL_BLEND);
 }
 
-int main(void) {
+int main32(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);

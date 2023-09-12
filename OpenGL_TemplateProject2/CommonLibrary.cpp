@@ -329,6 +329,9 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	case BLENDING: {
 		loadShader(vShader, fShader, "vertShaderBlending.glsl", "fragShaderBlending.glsl");
 		break; }
+	case CLIP: {
+		loadShader(vShader, fShader, "vertShaderClip.glsl", "fragShaderClip.glsl");
+		break; }
 	default: {}
 	}
 

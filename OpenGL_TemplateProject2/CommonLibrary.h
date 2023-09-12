@@ -46,6 +46,7 @@ using namespace std;
 #define GEOM_MOD_INFLATE_CHANGE 24
 #define FOG 25 
 #define BLENDING 26
+#define CLIP 27
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;
