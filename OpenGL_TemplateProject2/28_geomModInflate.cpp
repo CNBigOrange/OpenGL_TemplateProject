@@ -21,15 +21,15 @@ namespace geomModInflate {
 	GLuint vao2[numVAOs];
 	GLuint vbo2[numVBOs];
 
-	Sphere myTorus(96);
+	Sphere myTorus(48);
 	int numTorusVertices = myTorus.getNumVertices();
 	int numTorusIndices = myTorus.getNumIndices();
 
-	glm::vec3 initialLightLoc = glm::vec3(5.0f, 2.0f, 2.0f);
+	glm::vec3 initialLightLoc = glm::vec3(5.0f, 2.0f, -4.0f);
 	float amt = 0.0f;
 
 	// variable allocation for display
-	GLuint mvLoc, projLoc, nLoc;
+	GLuint mvLoc, projLoc, nLoc, lLoc;
 	GLuint globalAmbLoc, ambLoc, diffLoc, specLoc, posLoc, mambLoc, mdiffLoc, mspecLoc, mshiLoc;
 	int width, height;
 	float aspect;
@@ -39,7 +39,7 @@ namespace geomModInflate {
 
 	// white light
 	float globalAmbient[4] = { 0.7f, 0.7f, 0.7f, 1.0f };
-	float lightAmbient[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	float lightAmbient[4] = { 0.7f, 0.7f, 0.7f, 1.0f };
 	float lightDiffuse[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	float lightSpecular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
@@ -124,9 +124,11 @@ void setupVertices_GeomModInflate(void) {
 }
 
 void init_lightGeomModInflate(GLFWwindow* window) {
-	renderingProgram2 = createShaderProgram(GEOM_MOD_INFLATE,ENABLE_GEOMETRY);
-	cameraX = 0.0f; cameraY = 0.0f; cameraZ = 500.0f;
-	torLocX = 1.0f; torLocY = 1.0f; torLocZ = -1.0f;
+	//renderingProgram2 = Utils::createShaderProgram("vertShaderGeomModInflate.glsl", "fragShaderGeomModInflate.glsl");
+	renderingProgram2 = createShaderProgram(GEOM_MOD_INFLATE_ONLY,ENABLE_GEOMETRY_ONLY);
+	//renderingProgram2 = Utils::createShaderProgram("BlinnPhongShaders/vertShader.glsl", "BlinnPhongShaders/fragShader.glsl");
+	cameraX = 0.0f; cameraY = 0.0f; cameraZ = 150.0f;
+	torLocX = 0.0f; torLocY = 0.0f; torLocZ = 0.0f;
 
 	glfwGetFramebufferSize(window, &width, &height);
 	aspect = (float)width / (float)height;
@@ -145,14 +147,15 @@ void display_GeomModInflate(GLFWwindow* window, double currentTime) {
 	mvLoc = glGetUniformLocation(renderingProgram2, "mv_matrix");
 	projLoc = glGetUniformLocation(renderingProgram2, "proj_matrix");
 	nLoc = glGetUniformLocation(renderingProgram2, "norm_matrix");
+	lLoc = glGetUniformLocation(renderingProgram2, "enableLighting");
 
 	vMat = glm::translate(glm::mat4(1.0f), glm::vec3(-cameraX , -cameraY, -cameraZ));
 
-	mMat = glm::translate(glm::mat4(1.0f), glm::vec3(torLocX * sin(currentTime), torLocY * cos(currentTime), torLocZ *sin(currentTime)));
-	mMat *= glm::rotate(mMat, toRadians(35.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+	mMat = glm::translate(glm::mat4(1.0f), glm::vec3(torLocX , torLocY , torLocZ ));
+	mMat = glm::rotate(mMat, toRadians(35.0f *currentTime ), glm::vec3(1.0f, 0.0f, 0.0f));
 
 	currentLightPos = glm::vec3(initialLightLoc.x, initialLightLoc.y, initialLightLoc.z);
-	amt = currentTime * 25.0f;
+	amt = 25.0f;
 	rMat = glm::rotate(glm::mat4(1.0f), toRadians(amt), glm::vec3(0.0f, 0.0f, 1.0f));
 	currentLightPos = glm::vec3(rMat * glm::vec4(currentLightPos, 1.0f));
 
@@ -174,6 +177,8 @@ void display_GeomModInflate(GLFWwindow* window, double currentTime) {
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glEnableVertexAttribArray(1);
 
+	glUniform1i(lLoc, 0);
+
 	glEnable(GL_CULL_FACE);
 	glFrontFace(GL_CCW);
 	glEnable(GL_DEPTH_TEST);
@@ -182,13 +187,16 @@ void display_GeomModInflate(GLFWwindow* window, double currentTime) {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo2[3]);
 	glDrawElements(GL_TRIANGLES, numTorusIndices, GL_UNSIGNED_INT, 0);
 
+	glUniform1i(lLoc, 1);
+	glFrontFace(GL_CW);
+	glDrawElements(GL_TRIANGLES, numTorusIndices, GL_UNSIGNED_INT, 0);
 }
 
-int main(void) {
+int main28(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	GLFWwindow* window = glfwCreateWindow(800, 800, "Chapter 7 - program 1", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 800, "Chapter 28 - program 1", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 	glfwSwapInterval(1);

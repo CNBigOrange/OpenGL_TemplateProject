@@ -5,6 +5,7 @@ layout (triangles) in;
 in vec3 varyingNormal[];
 in vec3 varyingLightDir[];
 in vec3 varyingHalfVector[];
+in vec3 varyingVertPos[];
 
 out vec3 varyingNormalG;
 out vec3 varyingLightDirG;
@@ -31,17 +32,29 @@ uniform Material material;
 uniform mat4 mv_matrix;
 uniform mat4 proj_matrix;
 uniform mat4 norm_matrix;
+uniform int enableLighting;
 
 void main (void)
 {	
-	//沿着法向量移动顶点，并将其他顶点属性原样传递
-	for (int i=0; i<3; i++)
-	{	gl_Position = proj_matrix *
-			(gl_in[i].gl_Position + normalize(vec4(varyingNormal[i],1.0))*0.4);
-		varyingNormalG = varyingNormal[i];
-		varyingLightDirG = varyingLightDir[i];
-		varyingHalfVectorG = varyingHalfVector[i];
-		EmitVertex();
-	}
+	vec4 triangleNormal = vec4(((varyingNormal[0]+varyingNormal[1]+varyingNormal[2])/3.0),1.0);
+	//如果被三整除则忽略图元
+	//if(mod(gl_PrimitiveIDIn,3)!=0){
+		for (int i=0; i<3; i++)
+		{	
+			//if(gl_in[i].gl_Position.y>0 && gl_in[i].gl_Position.x>0){
+			//gl_Position = gl_in[i].gl_Position + normalize(vec4(varyingNormal[i],1.0))*100.4;
+			//}
+			//else{
+			//gl_Position = gl_in[i].gl_Position;
+			//}
+		
+			gl_Position = gl_in[i].gl_Position + normalize(triangleNormal)*100.0;
+		
+			varyingNormalG = varyingNormal[i];
+			varyingLightDirG = varyingLightDir[i];
+			varyingHalfVectorG = varyingHalfVector[i];
+			EmitVertex();
+		}
+	//}
 	EndPrimitive();
 }

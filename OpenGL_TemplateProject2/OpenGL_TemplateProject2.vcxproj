@@ -114,6 +114,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>E:\OpenGL\OpenGLtemplate\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion)_tmp.pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,6 +172,10 @@
     <ClCompile Include="26_TessellationHeightMappedLight.cpp" />
     <ClCompile Include="27_TessellationHeightMappedLOD.cpp" />
     <ClCompile Include="28_geomModInflate.cpp" />
+    <ClCompile Include="29_geomModAdd.cpp" />
+    <ClCompile Include="30_geomModChange.cpp" />
+    <ClCompile Include="31_Fog.cpp" />
+    <ClCompile Include="32_Blending.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />

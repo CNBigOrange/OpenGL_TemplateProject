@@ -6,6 +6,7 @@ layout (location=1) in vec4 vertNormal;
 out vec3 varyingNormal; 
 out vec3 varyingLightDir;
 out vec3 varyingHalfVector;
+out vec3 varyingVertPos;
 
 struct PositionalLight
 {	vec4 ambient;
@@ -26,16 +27,17 @@ uniform Material material;
 uniform mat4 mv_matrix;
 uniform mat4 proj_matrix;
 uniform mat4 norm_matrix;
+uniform int enableLighting;
 
 void main(void)
 {
 	// output vertex positions, light, and normal vectors to the rasterizer for interpolation
-	vec3 vertPos3 = (mv_matrix * vertPos).xyz;
-	varyingLightDir = light.position - vertPos3;
+	varyingVertPos = (mv_matrix * vec4(vertPos)).xyz;
+	varyingLightDir = light.position - varyingVertPos;
 	varyingNormal = (norm_matrix * vertNormal).xyz;
 	
 	// calculate the half vector (L+V)
-	varyingHalfVector = normalize(varyingLightDir) + normalize(-vertPos3);
+	varyingHalfVector = normalize(varyingLightDir) + normalize(-varyingVertPos);
 	
-	gl_Position = mv_matrix * vertPos;
+	gl_Position = proj_matrix * mv_matrix * vertPos;
 }

@@ -128,12 +128,37 @@ bool loadShader(GLuint vShader, GLuint fShader, GLuint tcs, GLuint tes, const ch
 	return true;
 }
 
-bool loadShader(GLuint vShader, GLuint fShader, GLuint gShader, const char* mvertShaderStr, const char* mfragShaderStr, const char* mgemoShader)
+bool loadShader(GLuint vShader, GLuint fShader, GLuint gShader, GLuint tcs, GLuint tes, const char* mvertShaderStr, const char* mfragShaderStr, const char* mgemoShader,const char* tCS, const char* tES)
 {
 	//读取文本着色器代码
 	string vertShaderStr = readShaderSource(mvertShaderStr);
-	string fragShaderStr = readShaderSource(mfragShaderStr);
+	string tcsShaderStr = readShaderSource(tCS);
+	string tesShaderStr = readShaderSource(tES);
 	string gemoShaderStr = readShaderSource(mgemoShader);
+	string fragShaderStr = readShaderSource(mfragShaderStr);
+
+	//将代码由string转化为char*
+	const char* vertShaderSrc = vertShaderStr.c_str();
+	const char* fragShaderSrc = fragShaderStr.c_str();
+	const char* gemoShaderSrc = gemoShaderStr.c_str();
+	const char* tcsShaderSrc = tcsShaderStr.c_str();
+	const char* tesShaderSrc = tesShaderStr.c_str();
+
+	glShaderSource(vShader, 1, &vertShaderSrc, NULL);
+	glShaderSource(tcs, 1, &tcsShaderSrc, NULL);
+	glShaderSource(tes, 1, &tesShaderSrc, NULL);
+	glShaderSource(gShader, 1, &gemoShaderSrc, NULL);
+	glShaderSource(fShader, 1, &fragShaderSrc, NULL);
+
+	return true;
+}
+
+bool loadShader(GLuint vShader, GLuint fShader, GLuint gShader,  const char* mvertShaderStr, const char* mfragShaderStr, const char* mgemoShader)
+{
+	//读取文本着色器代码
+	string vertShaderStr = readShaderSource(mvertShaderStr);
+	string gemoShaderStr = readShaderSource(mgemoShader);
+	string fragShaderStr = readShaderSource(mfragShaderStr);
 
 	//将代码由string转化为char*
 	const char* vertShaderSrc = vertShaderStr.c_str();
@@ -141,8 +166,8 @@ bool loadShader(GLuint vShader, GLuint fShader, GLuint gShader, const char* mver
 	const char* gemoShaderSrc = gemoShaderStr.c_str();
 
 	glShaderSource(vShader, 1, &vertShaderSrc, NULL);
-	glShaderSource(fShader, 1, &fragShaderSrc, NULL);
 	glShaderSource(gShader, 1, &gemoShaderSrc, NULL);
+	glShaderSource(fShader, 1, &fragShaderSrc, NULL);
 
 	return true;
 }
@@ -283,8 +308,26 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 			"vertShaderTessHeightMappingLight.glsl", "fragShaderTessHeightMappingLight.glsl", "tessHeightMappingCShaderLOD.glsl", "tessHeightMappingEShaderLight.glsl");
 		break; }
 	case GEOM_MOD_INFLATE: {
+		loadShader(vShader, fShader, gShader, tcShader, teShader,
+			"vertShaderGeomModInflate.glsl", "fragShaderGeomModInflate.glsl", "geomShaderModInflate.glsl", "tessCShaderNULL.glsl", "tessEShaderNULL.glsl");
+		break; }
+	case GEOM_MOD_INFLATE_ONLY: {
 		loadShader(vShader, fShader, gShader, 
 			"vertShaderGeomModInflate.glsl", "fragShaderGeomModInflate.glsl", "geomShaderModInflate.glsl");
+		break; }
+	case GEOM_MOD_INFLATE_ADD: {
+		loadShader(vShader, fShader, gShader,
+			"vertShaderGeomModAdd.glsl", "fragShaderGeomModInflate.glsl", "geomShaderModAdd.glsl");
+		break; }
+	case GEOM_MOD_INFLATE_CHANGE: {
+		loadShader(vShader, fShader, gShader,
+			"vertShaderGeomModAdd.glsl", "fragShaderGeomModInflate.glsl", "geomShaderModChange.glsl");
+		break; }
+	case FOG: {
+		loadShader(vShader, fShader, "vertShaderFog.glsl", "fragShaderFog.glsl");
+		break; }
+	case BLENDING: {
+		loadShader(vShader, fShader, "vertShaderBlending.glsl", "fragShaderBlending.glsl");
 		break; }
 	default: {}
 	}
@@ -296,6 +339,11 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 		glCompileShader(teShader);
 	}
 	if (enable_shader == ENABLE_GEOMETRY) {
+		glCompileShader(tcShader);
+		glCompileShader(teShader);
+		glCompileShader(gShader);
+	}
+	if (enable_shader == ENABLE_GEOMETRY_ONLY) {
 		glCompileShader(gShader);
 	}
 
@@ -326,6 +374,12 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	}
 
 	if (enable_shader == ENABLE_GEOMETRY) {
+		glAttachShader(vfProgram, tcShader);
+		glAttachShader(vfProgram, teShader);
+		glAttachShader(vfProgram, gShader);
+	}
+
+	if (enable_shader == ENABLE_GEOMETRY_ONLY) {
 		glAttachShader(vfProgram, gShader);
 	}
 
