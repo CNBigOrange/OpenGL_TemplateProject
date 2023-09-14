@@ -332,6 +332,12 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	case CLIP: {
 		loadShader(vShader, fShader, "vertShaderClip.glsl", "fragShaderClip.glsl");
 		break; }
+	case STRIPES_3D_TEX: {
+		loadShader(vShader, fShader, "vertShader3Dtex.glsl", "fragShader3Dtex.glsl");
+		break; }
+	case MARBLE: {
+		loadShader(vShader, fShader, "vertShaderMarble.glsl", "fragShaderMarble.glsl");
+		break; }
 	default: {}
 	}
 

@@ -1,0 +1,88 @@
+﻿D:\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1101,5): warning MSB8027: 名为 Torus.cpp 的两个或更多文件将生成到同一位置的输出。这会导致错误的生成结果。   调用的文件是 ShapeClass\Torus.cpp, Torus.cpp。
+  10_More_Stack_Mat4_5.0.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  11_load_texture_6.0.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  12_Generate_Sphere.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  13_Generate_Torus.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  14_Load_Mesh.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  15_Light_ADS.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\15_Light_ADS.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  16_Light_ADS_Texture.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\16_Light_ADS_Texture.cpp(4,10): fatal  error C1083: 无法打开包括文件: “glm/gtc/type_ptr.hpp”: No such file or directory
+  17_Light_Shadow.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\17_Light_Shadow.cpp(4,10): fatal  error C1083: 无法打开包括文件: “glm/gtc/type_ptr.hpp”: No such file or directory
+  18_SkyBoxCubex.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\18_SkyBoxCubex.cpp(4,10): fatal  error C1083: 无法打开包括文件: “glm/gtc/type_ptr.hpp”: No such file or directory
+  19_ProcBump.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\19_ProcBump.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  20_NormalMappingMoon.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\20_NormalMappingMoon.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  21_NormalMapping.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\21_NormalMapping.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  22_HeightMappedTerrain.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\22_HeightMappedTerrain.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  23_TessellationGridOnly.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\23_TessellationGridOnly.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  24_TessellationBezier.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\24_TessellationBezier.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  25_TessellationHeightMapped.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\25_TessellationHeightMapped.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  26_TessellationHeightMappedLight.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\26_TessellationHeightMappedLight.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  27_TessellationHeightMappedLOD.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\27_TessellationHeightMappedLOD.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  28_geomModInflate.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\28_geomModInflate.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  29_geomModAdd.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\29_geomModAdd.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  正在生成代码...
+  正在编译...
+  30_geomModChange.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\30_geomModChange.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  31_Fog.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\31_Fog.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  32_Blending.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\32_Blending.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  33_Clip.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\33_Clip.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  34_stripes3Dtex.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\34_stripes3Dtex.cpp(1,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  3_DebugGLSL.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  2_DrawOnePoint.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  1_CreateWindow.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\1_CreateWindow.cpp(2,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  4_LoadGLSL_Code.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  5_SimpleAnimation.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  6_First3D_Cube.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  7_More_3D_Cube2.0.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  8_More_3D_CubeInstance3.0.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  9_More_3D_ShapeInstance4.0.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  CommonLibrary.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\CommonLibrary.h(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  ModelLoader.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\ModelLoader.h(7,10): fatal  error C1083: 无法打开包括文件: “glm/glm.hpp”: No such file or directory
+  Sphere.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\ToolsLibrary.h(7,10): fatal  error C1083: 无法打开包括文件: “glm/glm.hpp”: No such file or directory
+  Torus.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\ToolsLibrary.h(7,10): fatal  error C1083: 无法打开包括文件: “glm/glm.hpp”: No such file or directory
+  ToolsLibrary.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\ToolsLibrary.h(7,10): fatal  error C1083: 无法打开包括文件: “glm/glm.hpp”: No such file or directory
+  Torus.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\Torus.cpp(4,10): fatal  error C1083: 无法打开包括文件: “glm/gtc/matrix_transform.hpp”: No such file or directory
+  正在生成代码...
+  正在编译...
+  Utils.cpp
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\Utils.cpp(3,10): fatal  error C1083: 无法打开包括文件: “GL/glew.h”: No such file or directory
+  正在生成代码...

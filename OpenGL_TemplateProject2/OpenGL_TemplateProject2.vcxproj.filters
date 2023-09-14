@@ -158,6 +158,12 @@
     <ClCompile Include="33_Clip.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="34_stripes3Dtex.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="35_noiseMarble.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />
@@ -184,5 +190,40 @@
     <None Include="fragShaderNormalMoon.glsl" />
     <None Include="vertShaderNormal.glsl" />
     <None Include="vertShaderNormalMoon.glsl" />
+    <None Include="geomShaderModAdd.glsl" />
+    <None Include="geomShaderModChange.glsl" />
+    <None Include="geomShaderModInflate.glsl" />
+    <None Include="tessBezierCShader.glsl" />
+    <None Include="tessBezierEShader.glsl" />
+    <None Include="tessCShader.glsl" />
+    <None Include="tessCShaderNULL.glsl" />
+    <None Include="tessEShader.glsl" />
+    <None Include="tessEShaderNULL.glsl" />
+    <None Include="tessHeightMappingCShader.glsl" />
+    <None Include="tessHeightMappingCShaderLight.glsl" />
+    <None Include="tessHeightMappingCShaderLOD.glsl" />
+    <None Include="tessHeightMappingEShader.glsl" />
+    <None Include="tessHeightMappingEShaderLight.glsl" />
+    <None Include="vertShader3Dtex.glsl" />
+    <None Include="vertShaderBlending.glsl" />
+    <None Include="vertShaderClip.glsl" />
+    <None Include="vertShaderFog.glsl" />
+    <None Include="vertShaderGeomModAdd.glsl" />
+    <None Include="vertShaderGeomModInflate.glsl" />
+    <None Include="vertShaderHeightMapping.glsl" />
+    <None Include="vertShaderTess.glsl" />
+    <None Include="vertShaderTessBezier.glsl" />
+    <None Include="vertShaderTessHeightMapping.glsl" />
+    <None Include="vertShaderTessHeightMappingLight.glsl" />
+    <None Include="fragShaderTess.glsl" />
+    <None Include="fragShaderTessBezier.glsl" />
+    <None Include="fragShaderTessHeightMapping.glsl" />
+    <None Include="fragShaderTessHeightMappingLight.glsl" />
+    <None Include="fragShaderFog.glsl" />
+    <None Include="fragShaderGeomModInflate.glsl" />
+    <None Include="fragShaderHeightMapping.glsl" />
+    <None Include="fragShaderBlending.glsl" />
+    <None Include="fragShaderClip.glsl" />
+    <None Include="fragShader3Dtex.glsl" />
   </ItemGroup>
 </Project>

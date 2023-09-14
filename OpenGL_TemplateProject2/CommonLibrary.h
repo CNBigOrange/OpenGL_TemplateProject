@@ -47,6 +47,8 @@ using namespace std;
 #define FOG 25 
 #define BLENDING 26
 #define CLIP 27
+#define STRIPES_3D_TEX 28
+#define MARBLE 29
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;

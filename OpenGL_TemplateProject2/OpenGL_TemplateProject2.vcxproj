@@ -114,7 +114,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>E:\OpenGL\OpenGLtemplate\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion)_tmp.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,6 +177,8 @@
     <ClCompile Include="31_Fog.cpp" />
     <ClCompile Include="32_Blending.cpp" />
     <ClCompile Include="33_Clip.cpp" />
+    <ClCompile Include="34_stripes3Dtex.cpp" />
+    <ClCompile Include="35_noiseMarble.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />
@@ -196,25 +198,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />
+    <None Include="fragShader3Dtex.glsl" />
     <None Include="fragShaderAnimation.glsl" />
+    <None Include="fragShaderBlending.glsl" />
+    <None Include="fragShaderClip.glsl" />
     <None Include="fragShaderCube.glsl" />
+    <None Include="fragShaderFog.glsl" />
+    <None Include="fragShaderGeomModInflate.glsl" />
+    <None Include="fragShaderHeightMapping.glsl" />
     <None Include="fragShaderNormal.glsl" />
     <None Include="fragShaderNormalMoon.glsl" />
     <None Include="fragShaderProcBump.glsl" />
     <None Include="fragShaderSkyCube.glsl" />
+    <None Include="fragShaderTess.glsl" />
+    <None Include="fragShaderTessBezier.glsl" />
+    <None Include="fragShaderTessHeightMapping.glsl" />
+    <None Include="fragShaderTessHeightMappingLight.glsl" />
     <None Include="fragShaderTexture.glsl" />
     <None Include="fragShadowShader.glsl" />
     <None Include="fragShadowShader2.glsl" />
     <None Include="fragShadowShader3.glsl" />
     <None Include="fragShadowShaderPCF.glsl" />
+    <None Include="geomShaderModAdd.glsl" />
+    <None Include="geomShaderModChange.glsl" />
+    <None Include="geomShaderModInflate.glsl" />
+    <None Include="tessBezierCShader.glsl" />
+    <None Include="tessBezierEShader.glsl" />
+    <None Include="tessCShader.glsl" />
+    <None Include="tessCShaderNULL.glsl" />
+    <None Include="tessEShader.glsl" />
+    <None Include="tessEShaderNULL.glsl" />
+    <None Include="tessHeightMappingCShader.glsl" />
+    <None Include="tessHeightMappingCShaderLight.glsl" />
+    <None Include="tessHeightMappingCShaderLOD.glsl" />
+    <None Include="tessHeightMappingEShader.glsl" />
+    <None Include="tessHeightMappingEShaderLight.glsl" />
     <None Include="vertShader.glsl" />
+    <None Include="vertShader3Dtex.glsl" />
     <None Include="vertShaderAnimation.glsl" />
+    <None Include="vertShaderBlending.glsl" />
+    <None Include="vertShaderClip.glsl" />
     <None Include="vertShaderCube.glsl" />
     <None Include="vertShaderCubeInstance.glsl" />
+    <None Include="vertShaderFog.glsl" />
+    <None Include="vertShaderGeomModAdd.glsl" />
+    <None Include="vertShaderGeomModInflate.glsl" />
+    <None Include="vertShaderHeightMapping.glsl" />
     <None Include="vertShaderNormal.glsl" />
     <None Include="vertShaderNormalMoon.glsl" />
     <None Include="vertShaderProcBump.glsl" />
     <None Include="vertShaderSkyCube.glsl" />
+    <None Include="vertShaderTess.glsl" />
+    <None Include="vertShaderTessBezier.glsl" />
+    <None Include="vertShaderTessHeightMapping.glsl" />
+    <None Include="vertShaderTessHeightMappingLight.glsl" />
     <None Include="vertShaderTexture.glsl" />
     <None Include="vertShadowShader.glsl" />
     <None Include="vertShadowShader2.glsl" />
