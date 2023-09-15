@@ -48,6 +48,6 @@ void main(void)
 	vec4 t = texture(s,originalPosition/2.0 + 0.5);
 
 	// compute ADS contributions (per pixel):
-	fragColor = 0.7 * t * (globalAmbient + light.ambient + light.diffuse * max(cosTheta,0.0))
+	fragColor = 0.5 * t * (globalAmbient + light.ambient + light.diffuse * max(cosTheta,0.0))
 			+ 0.5 * light.specular * pow(max(cosPhi,0.0), material.shininess);
 }

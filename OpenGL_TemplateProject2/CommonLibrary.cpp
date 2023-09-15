@@ -338,6 +338,12 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	case MARBLE: {
 		loadShader(vShader, fShader, "vertShaderMarble.glsl", "fragShaderMarble.glsl");
 		break; }
+	case WOOD: {
+		loadShader(vShader, fShader, "vertShaderWood.glsl", "fragShaderWood.glsl");
+		break; }
+	case CLOUD: {
+		loadShader(vShader, fShader, "vertShaderCloud.glsl", "fragShaderCloud.glsl");
+		break; }
 	default: {}
 	}
 
@@ -531,6 +537,11 @@ GLuint loadTexture(const char* texImagePath)
 	return textureID;
 }
 
+
+double logistic(double x) {
+	double k = 3.0;
+	return (1.0 / (1.0 + pow(2.718, -k * x)));
+}
 
 /***************************************光照和材质**************************************/
 //黄金材质

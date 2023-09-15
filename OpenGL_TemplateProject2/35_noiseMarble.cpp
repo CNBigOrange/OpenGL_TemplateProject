@@ -22,7 +22,7 @@ namespace Marble {
 	GLuint vao2[numVAOs];
 	GLuint vbo2[numVBOs];
 
-	glm::vec3 lightLoc = glm::vec3(-2.0f, 3.0f, 0.6f);
+	glm::vec3 lightLoc = glm::vec3(0.0f, 0.0f, 10.6f);
 
 	ImportedModel dolphinObj("models/dolphinHighPoly.obj");
 	int numDolphinVertices;
@@ -45,9 +45,12 @@ namespace Marble {
 
 	// white light
 	float globalAmbient[4] = { 0.5f, 0.5f, 0.5f, 1.0f };
-	float lightAmbient[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	float lightAmbient[4] = { 0.2f, 0.2f, 0.2f, 1.0f };
 	float lightDiffuse[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	float lightSpecular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+	float thisAmb[4], thisDif[4], thisSpe[4], matAmb[4], matDif[4], matSpe[4];
+	float thisShi;
 
 	// white material
 	float matShi = 75.0f;
@@ -60,7 +63,7 @@ namespace Marble {
 }
 
 using namespace Marble;
-
+//平滑噪声
 double smoothNoise(double zoom, double x1, double y1, double z1) {
 	//get fractional part of x, y, and z
 	double fractX = x1 - (int)x1;
@@ -87,37 +90,33 @@ double smoothNoise(double zoom, double x1, double y1, double z1) {
 	return value;
 }
 
-
+//
 double turbulence(double x, double y, double z, double maxZoom) {
 	double sum = 0.0, zoom = maxZoom;
 	while (zoom >= 0.9) {
 		sum = sum + smoothNoise(zoom, x / zoom, y / zoom, z / zoom) * zoom;
-		zoom = zoom / 2.0;
+		zoom = zoom / 2.0;//对每个2的幂缩放因子
 	}
 	sum = 128.0 * sum / maxZoom;
 	return sum;
 }
 
-double logistic(double x) {
-	double k = 3.0;
-	return (1.0 / (1.0 + pow(2.718, -k * x)));
-}
-
 void fillDataArrayMarble(GLubyte data[]) {
-	double veinFrequency = 2.0;
-	double turbPower = 4.0;
-	double maxZoom = 32.0;
+	double veinFrequency = 2.0;//用于调整条纹数量
+	double turbPower = 2.0;//扰动量
+	double maxZoom = 32.0;//湍流的缩放系数
 	for (int i = 0; i < noiseWidth; i++) {
 		for (int j = 0; j < noiseHeight; j++) {
 			for (int k = 0; k < noiseDepth; k++) {
 				double xyzValue = (float)i / noiseWidth + (float)j / noiseHeight + (float)k / noiseDepth
 					+ turbPower * turbulence(i, j, k, maxZoom) / 256.0;
 
-				double sineValue = logistic(abs(sin(xyzValue * 3.14159 * veinFrequency)));
+				double sineValue = logistic(abs(sin(xyzValue * 3.14159 * veinFrequency)));//logistic()函数使噪声图中的值更倾向于靠近0.0或255.0
 				sineValue = std::max(-1.0, std::min(sineValue * 1.25 - 0.20, 1.0));
 
-				float redPortion = 255.0f * (float)sineValue;
-				float greenPortion = 255.0f * (float)std::min(sineValue * 1.5 - 0.25, 1.0);
+				float redPortion = 255.0f * (float)std::min(sineValue - 0.05, 1.0);
+				float greenPortion = 255.0f * (float)std::min(sineValue + 0.15, 1.0);
+				//float greenPortion = 255.0f * (float)sineValue;
 				float bluePortion = 255.0f * (float)sineValue;
 
 				data[i * (noiseWidth * noiseHeight * 4) + j * (noiseHeight * 4) + k * 4 + 0] = (GLubyte)redPortion;
@@ -179,20 +178,20 @@ void installLightsMarble(glm::mat4 vMatrix) {
 	lightPos[2] = transformed.z;
 
 	// get the locations of the light and material fields in the shader
-	globalAmbLoc = glGetUniformLocation(renderingProgram, "globalAmbient");
-	ambLoc = glGetUniformLocation(renderingProgram, "light.ambient");
-	diffLoc = glGetUniformLocation(renderingProgram, "light.diffuse");
-	specLoc = glGetUniformLocation(renderingProgram, "light.specular");
-	posLoc = glGetUniformLocation(renderingProgram, "light.position");
-	mshiLoc = glGetUniformLocation(renderingProgram, "material.shininess");
+	globalAmbLoc = glGetUniformLocation(renderingProgram2, "globalAmbient");
+	ambLoc = glGetUniformLocation(renderingProgram2, "light.ambient");
+	diffLoc = glGetUniformLocation(renderingProgram2, "light.diffuse");
+	specLoc = glGetUniformLocation(renderingProgram2, "light.specular");
+	posLoc = glGetUniformLocation(renderingProgram2, "light.position");
+	mshiLoc = glGetUniformLocation(renderingProgram2, "material.shininess");
 
 	//  set the uniform light and material values in the shader
-	glProgramUniform4fv(renderingProgram, globalAmbLoc, 1, globalAmbient);
-	glProgramUniform4fv(renderingProgram, ambLoc, 1, lightAmbient);
-	glProgramUniform4fv(renderingProgram, diffLoc, 1, lightDiffuse);
-	glProgramUniform4fv(renderingProgram, specLoc, 1, lightSpecular);
-	glProgramUniform3fv(renderingProgram, posLoc, 1, lightPos);
-	glProgramUniform1f(renderingProgram, mshiLoc, matShi);
+	glProgramUniform4fv(renderingProgram2, globalAmbLoc, 1, globalAmbient);
+	glProgramUniform4fv(renderingProgram2, ambLoc, 1, lightAmbient);
+	glProgramUniform4fv(renderingProgram2, diffLoc, 1, lightDiffuse);
+	glProgramUniform4fv(renderingProgram2, specLoc, 1, lightSpecular);
+	glProgramUniform3fv(renderingProgram2, posLoc, 1, lightPos);
+	glProgramUniform1f(renderingProgram2, mshiLoc, matShi);
 }
 
 void setupVertices_Marble(void) {
@@ -258,11 +257,10 @@ void display_Marble(GLFWwindow* window, double currentTime) {
 
 	mvLoc = glGetUniformLocation(renderingProgram2, "mv_matrix");
 	projLoc = glGetUniformLocation(renderingProgram2, "proj_matrix");
-	nLoc = glGetUniformLocation(renderingProgram, "norm_matrix");
+	nLoc = glGetUniformLocation(renderingProgram2, "norm_matrix");
 
 	vMat = glm::translate(glm::mat4(1.0f), glm::vec3(-cameraX , -cameraY, -cameraZ));
 	vMat = glm::rotate(vMat, toRadians(300 ), glm::vec3(0.0, 1.0, 0.0));
-
 
 	mMat = glm::translate(glm::mat4(1.0f), glm::vec3(torLocX , torLocY , torLocZ ));
 	mMat = glm::rotate(mMat, toRadians(350.0f * -currentTime), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -276,6 +274,7 @@ void display_Marble(GLFWwindow* window, double currentTime) {
 
 	glUniformMatrix4fv(mvLoc, 1, GL_FALSE, glm::value_ptr(mvMat));
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(pMat));
+	glUniformMatrix4fv(nLoc, 1, GL_FALSE, glm::value_ptr(invTrMat));
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo2[0]);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
@@ -297,11 +296,11 @@ void display_Marble(GLFWwindow* window, double currentTime) {
 
 }
 
-int main(void) {
+int main35(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	GLFWwindow* window = glfwCreateWindow(800, 800, "Chapter 34", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 800, "Chapter 35", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 	glfwSwapInterval(1);

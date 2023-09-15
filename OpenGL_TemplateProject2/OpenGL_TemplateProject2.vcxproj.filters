@@ -36,6 +36,9 @@
     <ClInclude Include="Utils.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ShapeClass\HalfSphere.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1_CreateWindow.cpp">
@@ -162,6 +165,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="35_noiseMarble.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="36_noiseWood.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="37_noiseCloud.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeClass\HalfSphere.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

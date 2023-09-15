@@ -49,6 +49,8 @@ using namespace std;
 #define CLIP 27
 #define STRIPES_3D_TEX 28
 #define MARBLE 29
+#define WOOD 30
+#define CLOUD 31
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;
@@ -90,7 +92,8 @@ mat4 buildRotateZ(float rad);
 //加载贴图
 GLuint loadTexture(const char* texImagePath);
 
-
+//使x更倾向于靠近0.0或255.0
+double logistic(double x);
 
 /*******************************光照和材质********************************/
 //黄金材质：环境光、漫反射、镜面反射和光泽度
