@@ -176,6 +176,18 @@
     <ClCompile Include="ShapeClass\HalfSphere.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="38_Dissolve.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="39_surfaceSetup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="40_ReflectionRefraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="41_MovingWater.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

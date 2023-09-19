@@ -125,7 +125,7 @@ void initSkyCube(GLFWwindow* window) {
 	setupVerticesSkyCube();
 
 	brickTexture = loadTexture("texture/spstob_1.jpg");
-	skyboxTexture = loadTexture("texture/alien.jpg");
+	skyboxTexture = loadTexture("texture/3a24142dce7b271799b6501fabc4ee19_r.jpg");
 
 	torLocX = 0.0f; torLocY = 0.0f; torLocZ = 0.0f;
 	cameraX = 0.0f; cameraY = 0.0f; cameraZ = 100.0f;
@@ -146,7 +146,7 @@ void displaySkyCube(GLFWwindow* window, double currentTime) {
 
 	mMat = glm::translate(glm::mat4(1.0f), glm::vec3(cameraX, cameraY, -500.0 + cameraZ));
 	mMat = glm::scale(mMat, glm::vec3(5.0, 5.0, 5.0));
-	mMat = glm::rotate(mMat, toRadians(150 * currentTime), glm::vec3(0.0, 1.0, 0.0));
+	mMat = glm::rotate(mMat, toRadians(150), glm::vec3(0.0, 1.0, 0.0));
 	mvMat = vMat * mMat;
 
 	mvLoc = glGetUniformLocation(renderingProgram2, "mv_matrix");

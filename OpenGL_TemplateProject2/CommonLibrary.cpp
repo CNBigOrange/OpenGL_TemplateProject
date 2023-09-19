@@ -344,6 +344,33 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	case CLOUD: {
 		loadShader(vShader, fShader, "vertShaderCloud.glsl", "fragShaderCloud.glsl");
 		break; }
+	case DISSOLVE: {
+		loadShader(vShader, fShader, "vertShaderDissolve.glsl", "fragShaderDissolve.glsl");
+		break; }
+	case SURFACE_SETUP: {
+		loadShader(vShader, fShader, "vertShaderSurfaceSetup.glsl", "fragShaderSurfaceSetup.glsl");
+		break; }
+	case SURFACE_SETUP_C: {
+		loadShader(vShader, fShader, "vertCShaderSurfaceSetup.glsl", "fragCShaderSurfaceSetup.glsl");
+		break; }
+	case SURFACE_REFLECTION: {
+		loadShader(vShader, fShader, "vertCShaderReflectionSurface.glsl", "fragShaderReflectionSurface.glsl");
+		break; }
+	case FLOOR_REFLECTION: {
+		loadShader(vShader, fShader, "vertCShaderReflectionFloor.glsl", "fragShaderReflectionFloor.glsl");
+		break; }
+	case CUBE_REFLECTION: {
+		loadShader(vShader, fShader, "vertCShaderReflection.glsl", "fragShaderReflection.glsl");
+		break; }
+	case WATER_SURFACE: {
+		loadShader(vShader, fShader, "vertShaderSurface.glsl", "fragShaderSurface.glsl");
+		break; }
+	case WATER_FLOOR: {
+		loadShader(vShader, fShader, "vertShaderFloor.glsl", "fragShaderFloor.glsl");
+		break; }
+	case WATER_CUBE: {
+		loadShader(vShader, fShader, "vertCShaderWater.glsl", "fragCShaderWater.glsl");
+		break; }
 	default: {}
 	}
 
@@ -537,6 +564,24 @@ GLuint loadTexture(const char* texImagePath)
 	return textureID;
 }
 
+GLuint loadCubeMap(const char* mapDir) {
+	GLuint textureRef;
+	string xp = mapDir; xp = xp + "/xp.jpg";
+	string xn = mapDir; xn = xn + "/xn.jpg";
+	string yp = mapDir; yp = yp + "/yp.jpg";
+	string yn = mapDir; yn = yn + "/yn.jpg";
+	string zp = mapDir; zp = zp + "/zp.jpg";
+	string zn = mapDir; zn = zn + "/zn.jpg";
+	textureRef = SOIL_load_OGL_cubemap(xp.c_str(), xn.c_str(), yp.c_str(), yn.c_str(), zp.c_str(), zn.c_str(),
+		SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS);
+	if (textureRef == 0) cout << "didnt find cube map image file" << endl;
+	//	glBindTexture(GL_TEXTURE_CUBE_MAP, textureRef);
+	// reduce seams
+	//	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	//	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	//	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+	return textureRef;
+}
 
 double logistic(double x) {
 	double k = 3.0;

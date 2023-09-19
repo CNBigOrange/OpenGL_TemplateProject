@@ -51,6 +51,17 @@ using namespace std;
 #define MARBLE 29
 #define WOOD 30
 #define CLOUD 31
+#define DISSOLVE 32
+#define SURFACE_SETUP 33
+#define SURFACE_SETUP_C 34
+#define SURFACE_REFLECTION 35
+#define FLOOR_REFLECTION 36
+#define CUBE_REFLECTION 37
+#define WATER_SURFACE 38
+#define WATER_FLOOR 39
+#define WATER_CUBE 40
+
+#define PI 3.1415926535
 
 //GLuint 是unsigned int 简写，许多OpenGL结构体都是整数类型引用
 static GLuint renderingProgram;
@@ -91,6 +102,7 @@ mat4 buildRotateZ(float rad);
 
 //加载贴图
 GLuint loadTexture(const char* texImagePath);
+GLuint loadCubeMap(const char* mapDir);
 
 //使x更倾向于靠近0.0或255.0
 double logistic(double x);

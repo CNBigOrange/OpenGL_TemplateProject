@@ -182,9 +182,13 @@
     <ClCompile Include="35_noiseMarble.cpp" />
     <ClCompile Include="36_noiseWood.cpp" />
     <ClCompile Include="37_noiseCloud.cpp" />
+    <ClCompile Include="38_Dissolve.cpp" />
+    <ClCompile Include="39_surfaceSetup.cpp" />
     <ClCompile Include="3_DebugGLSL.cpp" />
     <ClCompile Include="2_DrawOnePoint.cpp" />
     <ClCompile Include="1_CreateWindow.cpp" />
+    <ClCompile Include="40_ReflectionRefraction.cpp" />
+    <ClCompile Include="41_MovingWater.cpp" />
     <ClCompile Include="4_LoadGLSL_Code.cpp" />
     <ClCompile Include="5_SimpleAnimation.cpp" />
     <ClCompile Include="6_First3D_Cube.cpp" />

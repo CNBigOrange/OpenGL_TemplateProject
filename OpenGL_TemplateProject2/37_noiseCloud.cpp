@@ -218,7 +218,7 @@ void display_Cloud(GLFWwindow* window, double currentTime) {
 	glUniformMatrix4fv(mvLoc, 1, GL_FALSE, glm::value_ptr(mvMat));
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(pMat));
 
-	depth += (float)((currentTime - prevTime) * 0.00001f);
+	depth += (float)((currentTime - prevTime) * 0.00002f);
 	if (depth >= 0.99f)depth = 0.01f;
 	glUniform1f(dOffsetLoc, depth);
 
@@ -242,7 +242,7 @@ void display_Cloud(GLFWwindow* window, double currentTime) {
 
 }
 
-int main(void) {
+int main37(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
