@@ -188,6 +188,9 @@
     <ClCompile Include="41_MovingWater.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="42_ComputeShader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

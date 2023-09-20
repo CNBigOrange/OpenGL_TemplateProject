@@ -189,6 +189,7 @@
     <ClCompile Include="1_CreateWindow.cpp" />
     <ClCompile Include="40_ReflectionRefraction.cpp" />
     <ClCompile Include="41_MovingWater.cpp" />
+    <ClCompile Include="42_ComputeShader.cpp" />
     <ClCompile Include="4_LoadGLSL_Code.cpp" />
     <ClCompile Include="5_SimpleAnimation.cpp" />
     <ClCompile Include="6_First3D_Cube.cpp" />

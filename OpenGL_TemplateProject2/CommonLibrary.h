@@ -18,6 +18,7 @@ using namespace std;
 #define ENABLE_TESSELLATION 1
 #define ENABLE_GEOMETRY 2
 #define ENABLE_GEOMETRY_ONLY 3
+#define ENABLE_COMPUTE_SHADER_ONLY 4
 #define numVAOs 1
 #define numVBOs 2
 #define DEBUG_MODE 1
@@ -60,6 +61,7 @@ using namespace std;
 #define WATER_SURFACE 38
 #define WATER_FLOOR 39
 #define WATER_CUBE 40
+#define SIMPLE_COMPUTE_SHADER 41
 
 #define PI 3.1415926535
 

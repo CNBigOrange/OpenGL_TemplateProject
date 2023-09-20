@@ -91,6 +91,18 @@ bool checkOpenGLError() {
 	return foundError;
 }
 
+bool loadShader(GLuint cShader, const char* mcomputeShaderStr)
+{
+	//读取文本着色器代码
+	string computeShaderStr = readShaderSource(mcomputeShaderStr);
+	//将代码由string转化为char*
+	const char* computeShaderSrc = computeShaderStr.c_str();
+
+	glShaderSource(cShader, 1, &computeShaderSrc, NULL);
+
+	return true;
+}
+
 bool loadShader(GLuint vShader, GLuint fShader, const char* mvertShaderStr, const char* mfragShaderStr)
 {
 	//读取文本着色器代码
@@ -182,6 +194,7 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
 	GLuint gShader = glCreateShader(GL_GEOMETRY_SHADER);
+	GLuint cShader = glCreateShader(GL_COMPUTE_SHADER);
 	
 	GLuint tcShader = glCreateShader(GL_TESS_CONTROL_SHADER);
 	GLuint teShader = glCreateShader(GL_TESS_EVALUATION_SHADER);
@@ -371,6 +384,9 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	case WATER_CUBE: {
 		loadShader(vShader, fShader, "vertCShaderWater.glsl", "fragCShaderWater.glsl");
 		break; }
+	case SIMPLE_COMPUTE_SHADER: {
+		loadShader(cShader, "SimpleComputeShader.glsl");
+		break; }
 	default: {}
 	}
 
@@ -387,6 +403,9 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 	}
 	if (enable_shader == ENABLE_GEOMETRY_ONLY) {
 		glCompileShader(gShader);
+	}
+	if (enable_shader == ENABLE_COMPUTE_SHADER_ONLY) {
+		glCompileShader(cShader);
 	}
 
 	//捕获编译着色器时的错误
@@ -423,6 +442,10 @@ GLuint createShaderProgram(int fun_id,int enable_shader ) {
 
 	if (enable_shader == ENABLE_GEOMETRY_ONLY) {
 		glAttachShader(vfProgram, gShader);
+	}
+
+	if (enable_shader == ENABLE_COMPUTE_SHADER_ONLY) {
+		glAttachShader(vfProgram, cShader);
 	}
 
 	glAttachShader(vfProgram, fShader);
