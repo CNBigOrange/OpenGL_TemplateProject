@@ -200,6 +200,12 @@
     <ClCompile Include="45_RayCastingNonAxisBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="46_RayCastingTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="47_RayCastingSkyBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

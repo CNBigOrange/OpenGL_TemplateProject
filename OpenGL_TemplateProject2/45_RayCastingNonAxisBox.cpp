@@ -118,7 +118,7 @@ void displayNonAxisBox(GLFWwindow* window, double currentTime) {
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-int main(void) {
+int main45(void) {
 	int wait;
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
