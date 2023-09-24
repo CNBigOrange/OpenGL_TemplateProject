@@ -191,6 +191,15 @@
     <ClCompile Include="42_ComputeShader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="43_RayCasting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="44_RayCastingADS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="45_RayCastingNonAxisBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

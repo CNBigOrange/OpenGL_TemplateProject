@@ -20,7 +20,7 @@ namespace ComputeShader {
 
 using namespace ComputeShader;
 
-void init() {
+void init_ComputeShader() {
 	//simpleComputeShader = createShaderProgram(SIMPLE_COMPUTE_SHADER,ENABLE_COMPUTE_SHADER_ONLY);
 	simpleComputeShader = Utils::createShaderProgram("simpleComputeShader.glsl");
 
@@ -58,7 +58,7 @@ int main42(void) {
 	glfwMakeContextCurrent(window);
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 
-	init();
+	init_ComputeShader();
 	computeSum();
 	std::cout << v1[0] << " " << v1[1] << " " << v1[2] << " " << v1[3] << " " << v1[4] << " " << v1[5] << std::endl;
 	std::cout << v2[0] << " " << v2[1] << " " << v2[2] << " " << v2[3] << " " << v2[4] << " " << v2[5] << std::endl;
