@@ -206,6 +206,9 @@
     <ClCompile Include="47_RayCastingSkyBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="48_RayCastingPlane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

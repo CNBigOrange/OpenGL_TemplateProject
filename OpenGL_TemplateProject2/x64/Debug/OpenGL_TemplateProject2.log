@@ -4,4 +4,11 @@ E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: �
 E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\47_RayCastingSkyBox.cpp(107,22): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  48_RayCastingPlane.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\48_RayCastingPlane.cpp(107,22): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  正在生成代码...
+x64\Debug\Torus.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
   OpenGL_TemplateProject2.vcxproj -> E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\x64\Debug\OpenGL_TemplateProject2.exe
