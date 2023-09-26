@@ -196,7 +196,10 @@
     <ClCompile Include="46_RayCastingTexture.cpp" />
     <ClCompile Include="47_RayCastingSkyBox.cpp" />
     <ClCompile Include="48_RayCastingPlane.cpp" />
+    <ClCompile Include="49_RayCastingSingleReflection.cpp" />
     <ClCompile Include="4_LoadGLSL_Code.cpp" />
+    <ClCompile Include="50_RayCastingSingleRefraction.cpp" />
+    <ClCompile Include="51_RayCastingReflectionRefraction.cpp" />
     <ClCompile Include="5_SimpleAnimation.cpp" />
     <ClCompile Include="6_First3D_Cube.cpp" />
     <ClCompile Include="7_More_3D_Cube2.0.cpp" />

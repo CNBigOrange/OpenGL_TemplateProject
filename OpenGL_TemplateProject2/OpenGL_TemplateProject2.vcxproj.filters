@@ -209,6 +209,15 @@
     <ClCompile Include="48_RayCastingPlane.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="49_RayCastingSingleReflection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="50_RayCastingSingleRefraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="51_RayCastingReflectionRefraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragShader.glsl" />

@@ -2,14 +2,7 @@
 
 layout (local_size_x=1) in;//工作组大小为1
 layout (binding=0, rgba8) uniform image2D output_texture;
-layout (binding=1) uniform sampler2D sampMoon;
-layout (binding=2) uniform sampler2D sampBrick;
-layout (binding=3) uniform sampler2D xpTex;
-layout (binding=4) uniform sampler2D xnTex;
-layout (binding=5) uniform sampler2D ypTex;
-layout (binding=6) uniform sampler2D ynTex;
-layout (binding=7) uniform sampler2D zpTex;
-layout (binding=8) uniform sampler2D znTex;
+layout (binding=1) uniform sampler2D sampMarble;
 
 float camera_pos = 5.0;
 
@@ -21,36 +14,30 @@ struct Ray//定义光线
 };
 
 //定义球体
-float sphere_radius = 2.5;
-vec3 sphere_position = vec3(1.0, 0.0, -3.0);
+float sphere_radius = 1.2;
+vec3 sphere_position = vec3(0.7 + sin(time), 0.2, 0.2);
 vec3 sphere_color = vec3(1.0, 0.0, 0.0); // red
 
-//定义立方体
-//vec3 box_mins = vec3(-2.0, -2.0, 0.0);
-//vec3 box_maxs = vec3(-0.5, 1.0, 2.0);
-//vec3 box_color = vec3(0.0, 1.0, 0.0); // green
-
-vec3 box_mins = vec3(-0.5, -0.5, -1.0);
-vec3 box_maxs = vec3( 0.5,  0.5,  1.0);
+vec3 box_mins = vec3(-0.25, -0.8, -0.25);
+vec3 box_maxs = vec3( 0.25,  0.8,  0.25);
 vec3 box_color = vec3(0.0, 1.0, 0.0); // green
 
-//定义天空盒
 vec3 sbox_mins = vec3(-20, -20, -20);
-vec3 sbox_maxs = vec3( 20,  20,  20);
-vec3 sbox_color = vec3(1.0, 1.0, 1.0); // white
+vec3 sbox_maxs = vec3( 20, 20,  20);
+vec3 rbox_color = vec3(0.25, 1.0, 1.0); // light aqua
 
 const float PI = 3.14159265358;
 const float DEG_TO_RAD = PI / 180.0;
 
-vec3 box_pos = vec3(-1, -0.5, 1.0);
-float box_xrot = DEG_TO_RAD * 10.0;
-float box_yrot = DEG_TO_RAD * 70.0;
-float box_zrot = DEG_TO_RAD * 55.0;
+vec3 box_pos = vec3(-0.75, -0.2, 3.4);
+float box_xrot = 0.0;
+float box_yrot = 70.0;
+float box_zrot = 0.0;
 
 //平面的位置
-vec3 plane_pos = vec3(0, -2.5, -2.0); //0,-1.2,-2
+vec3 plane_pos = vec3(0, -1.0, -2.0);
 float plane_width = 12.0;
-float plane_depth = 8.0;
+float plane_depth = 16.0;
 float plane_xrot = DEG_TO_RAD * 0.0;
 float plane_yrot = DEG_TO_RAD * 0.0;
 float plane_zrot = DEG_TO_RAD * 0.0;
@@ -59,11 +46,11 @@ float plane_zrot = DEG_TO_RAD * 0.0;
 vec4 worldAmb_ambient = vec4(0.3, 0.3, 0.3, 1.0);
 
 vec4 objMat_ambient = vec4(0.2, 0.2, 0.2, 1.0);
-vec4 objMat_diffuse = vec4(0.7, 0.7, 0.7, 1.0);
+vec4 objMat_diffuse = vec4(0.9, 0.9, 0.9, 1.0);
 vec4 objMat_specular = vec4(1.0, 1.0, 1.0, 1.0);
 float objMat_shininess = 50.0;
 
-vec3 pointLight_position = vec3(-3.0+ 5 * sin(time), 2.0 , 4.0);
+vec3 pointLight_position = vec3(-3.0+ 5 * sin(time), 4.0 , 3.5);
 vec4 pointLight_ambient = vec4(0.2, 0.2, 0.2, 1.0);
 vec4 pointLight_diffuse = vec4(0.7, 0.7, 0.7, 1.0);
 vec4 pointLight_specular = vec4(1.0, 1.0, 1.0, 1.0);
@@ -537,37 +524,67 @@ vec3 checkerboard(vec2 tc)
 }
 
 //------------------------------------------------------------------------------
+// This function is an exact copy of raytrace()
+//------------------------------------------------------------------------------
+vec3 raytrace3(Ray r)
+{	Collision c = get_closest_collision(r);
+	if (c.object_index == -1) return vec3(0.0);	// no collision
+	if (c.object_index == 1) return ads_phong_lighting(r,c) * sphere_color;
+	if (c.object_index == 2) return ads_phong_lighting(r,c) * (texture(sampMarble, c.tc)).xyz;
+	if (c.object_index == 3) return ads_phong_lighting(r,c) * rbox_color;
+	if (c.object_index == 4) return ads_phong_lighting(r,c) * (checkerboard(c.tc)).xyz;
+}
+
+//------------------------------------------------------------------------------
+// This function is an exact copy of raytrace()
+//------------------------------------------------------------------------------
+vec3 raytrace2(Ray r)
+{	Collision c = get_closest_collision(r);
+	if (c.object_index == -1) return vec3(1.0);	// no collision
+	if (c.object_index == 1)
+	{	// generate a secondary ray
+		Ray refracted_ray;
+		refracted_ray.start = c.p - c.n * 0.001;
+		refracted_ray.dir = refract(r.dir, c.n, 1.5);
+		vec3 refracted_color = raytrace3(refracted_ray);
+		return 1.5 * ads_phong_lighting(r,c) * refracted_color;
+	}
+	if (c.object_index == 3) return ads_phong_lighting(r,c) * rbox_color;
+	if (c.object_index == 4) return ads_phong_lighting(r,c) * (checkerboard(c.tc)).xyz;
+}
+
+//------------------------------------------------------------------------------
 // This function casts a ray into the scene and returns the final color for a pixel
 //------------------------------------------------------------------------------
 vec3 raytrace(Ray r)
 {	Collision c = get_closest_collision(r);
 	if (c.object_index == -1) return vec3(0.0);	// no collision
-	if (c.object_index == 1) return ads_phong_lighting(r,c) * (texture(sampMoon, c.tc)).xyz;
-	if (c.object_index == 2) return ads_phong_lighting(r,c) * (texture(sampBrick, c.tc)).xyz;
+	if (c.object_index == 1)
+	{	// generate a secondary refraction ray
+		Ray refracted_ray;
+		refracted_ray.start = c.p - c.n * 0.001;
+		refracted_ray.dir = refract(r.dir, c.n, .66667);
+		vec3 refracted_color = raytrace2(refracted_ray);
+	
+		// generate a secondary reflection ray
+		Ray reflected_ray;
+		reflected_ray.start = c.p + c.n * 0.001;
+		reflected_ray.dir = reflect(r.dir, c.n);
+		vec3 reflected_color = raytrace3(reflected_ray);
+		return clamp(ads_phong_lighting(r,c) *
+			((0.3 * reflected_color) + (2.0 * refracted_color)), 0, 1);//光线追踪碰撞的加权和
+	}
+	if (c.object_index == 2)
+	{	// generate a secondary reflection ray
+		Ray reflected_ray;
+		reflected_ray.start = c.p + c.n * 0.001;
+		reflected_ray.dir = reflect(r.dir, c.n);
+		vec3 reflected_color = raytrace3(reflected_ray);
+		return clamp(ads_phong_lighting(r,c) *
+		     ((0.5 * reflected_color) + (1.0 * (texture(sampMarble, c.tc)).xyz)), 0, 1);
+	}
+	if (c.object_index == 3) return ads_phong_lighting(r,c) * rbox_color;
 	if (c.object_index == 4) return ads_phong_lighting(r,c) * (checkerboard(c.tc)).xyz;
-
-//*	
-if (c.object_index == 3)//天空盒，因此只需要返回纹理而无须加入光照
-	{	if (c.face_index == 0) return texture(xnTex, c.tc).xyz;//对-x面纹理图像进行采样
-		else if (c.face_index == 1) return texture(xpTex, c.tc).xyz;//对+x面纹理图像进行采样
-		else if (c.face_index == 2) return texture(ynTex, c.tc).xyz;//对-y面纹理图像进行采样
-		else if (c.face_index == 3) return texture(ypTex, c.tc).xyz;//对+y面纹理图像进行采样
-		else if (c.face_index == 4) return texture(znTex, c.tc).xyz;//对-z面纹理图像进行采样
-		else if (c.face_index == 5) return texture(zpTex, c.tc).xyz;//对+z面纹理图像进行采样
-	}
-//*/	
-
-/*
-	if (c.object_index == 3)
-	{	
-		if (c.face_index == 0) return ads_phong_lighting(r,c);
-		else if (c.face_index == 1) return ads_phong_lighting(r,c);
-		else if (c.face_index == 2) return ads_phong_lighting(r,c);
-		else if (c.face_index == 3) return ads_phong_lighting(r,c);
-		else if (c.face_index == 4) return ads_phong_lighting(r,c);
-		else if (c.face_index == 5) return ads_phong_lighting(r,c);
-	}
-*/
 }
 
 void main()

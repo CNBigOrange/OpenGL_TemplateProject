@@ -9,7 +9,7 @@
 #include "Utils.h"
 
 using namespace std;
-namespace RayTracePlane {
+namespace RayTraceReflectionRefraction {
 #define RAYTRACE_RENDER_WIDTH	800
 #define RAYTRACE_RENDER_HEIGHT	800
 
@@ -30,17 +30,16 @@ namespace RayTracePlane {
 	GLuint vbo2[numVBOs];
 
 	GLuint screenQuadShader, raytraceComputeShader;
-	GLuint brickTexture, moonTexture;
-	GLuint xpTex, xnTex, ypTex, ynTex, zpTex, znTex;
+	GLuint marbleTexture;
 
 	void setWindowSizeCallback(GLFWwindow* win, int newWidth, int newHeight) {
 		glViewport(0, 0, newWidth, newHeight);
 	}
 }
 
-using namespace RayTracePlane;
+using namespace RayTraceReflectionRefraction;
 
-void init_RayTracePlane(GLFWwindow* window) {
+void init_RayTraceReflectionRefraction(GLFWwindow* window) {
 	Utils::displayComputeShaderLimits();
 
 	// Allocate the memory for the screen texture, and wipe its contacts
@@ -84,20 +83,13 @@ void init_RayTracePlane(GLFWwindow* window) {
 	glBindBuffer(GL_ARRAY_BUFFER, vbo2[1]);  // texture coordinates
 	glBufferData(GL_ARRAY_BUFFER, sizeof(windowQuadUVs), windowQuadUVs, GL_STATIC_DRAW);
 
-	raytraceComputeShader = Utils::createShaderProgram("RayCastingPlaneComputeShader.glsl");
+	raytraceComputeShader = Utils::createShaderProgram("RayCastingReflectionRefractionComputeShader.glsl");
 	screenQuadShader = Utils::createShaderProgram("RayCastingVertShader.glsl", "RayCastingFragShader.glsl");
 
-	brickTexture = Utils::loadTexture("texture/brick1.jpg");
-	moonTexture = Utils::loadTexture("texture/moon.jpg");
-	xpTex = Utils::loadTexture("cubeMap/xp.jpg");
-	xnTex = Utils::loadTexture("cubeMap/xn.jpg");
-	ypTex = Utils::loadTexture("cubeMap/yp.jpg");
-	ynTex = Utils::loadTexture("cubeMap/yn.jpg");
-	zpTex = Utils::loadTexture("cubeMap/zp.jpg");
-	znTex = Utils::loadTexture("cubeMap/zn.jpg");
+	marbleTexture = Utils::loadTexture("texture/ice.jpg");
 }
 
-void displayRayTracePlane(GLFWwindow* window, double currentTime) {
+void displayRayTraceReflectionRefraction(GLFWwindow* window, double currentTime) {
 	//=======================================================
 	// Call the Raytrace compute shader
 	//=======================================================
@@ -110,21 +102,7 @@ void displayRayTracePlane(GLFWwindow* window, double currentTime) {
 	glBindImageTexture(0, screenTextureID, 0, GL_FALSE, 0, GL_WRITE_ONLY, GL_RGBA8);
 
 	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, moonTexture);
-	glActiveTexture(GL_TEXTURE2);
-	glBindTexture(GL_TEXTURE_2D, brickTexture);//当同时使用图像存储和纹理时，需要重置激活的纹理
-	glActiveTexture(GL_TEXTURE3);
-	glBindTexture(GL_TEXTURE_2D, xpTex);
-	glActiveTexture(GL_TEXTURE4);
-	glBindTexture(GL_TEXTURE_2D, xnTex);
-	glActiveTexture(GL_TEXTURE5);
-	glBindTexture(GL_TEXTURE_2D, ypTex);
-	glActiveTexture(GL_TEXTURE6);
-	glBindTexture(GL_TEXTURE_2D, ynTex);
-	glActiveTexture(GL_TEXTURE7);
-	glBindTexture(GL_TEXTURE_2D, zpTex);
-	glActiveTexture(GL_TEXTURE8);
-	glBindTexture(GL_TEXTURE_2D, znTex);
+	glBindTexture(GL_TEXTURE_2D, marbleTexture);
 
 	glActiveTexture(GL_TEXTURE0);
 
@@ -149,22 +127,22 @@ void displayRayTracePlane(GLFWwindow* window, double currentTime) {
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-int main48(void) {
+int main(void) {
 	int wait;
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "Program 44 - simple ray casting", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "Program 51 - simple ray casting", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 	glfwSwapInterval(1);
 
 	glfwSetWindowSizeCallback(window, setWindowSizeCallback);
 
-	init_RayTracePlane(window);
+	init_RayTraceReflectionRefraction(window);
 
 	while (!glfwWindowShouldClose(window)) {
-		displayRayTracePlane(window, glfwGetTime());
+		displayRayTraceReflectionRefraction(window, glfwGetTime());
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

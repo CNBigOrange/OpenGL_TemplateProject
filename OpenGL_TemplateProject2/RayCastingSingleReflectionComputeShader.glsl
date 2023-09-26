@@ -22,7 +22,7 @@ struct Ray//定义光线
 
 //定义球体
 float sphere_radius = 2.5;
-vec3 sphere_position = vec3(1.0, 0.0, -3.0);
+vec3 sphere_position = vec3(1.0 + sin(time), 0.0, -3.0);
 vec3 sphere_color = vec3(1.0, 0.0, 0.0); // red
 
 //定义立方体
@@ -537,9 +537,9 @@ vec3 checkerboard(vec2 tc)
 }
 
 //------------------------------------------------------------------------------
-// This function casts a ray into the scene and returns the final color for a pixel
+// This function is an exact copy of raytrace()
 //------------------------------------------------------------------------------
-vec3 raytrace(Ray r)
+vec3 raytrace2(Ray r)
 {	Collision c = get_closest_collision(r);
 	if (c.object_index == -1) return vec3(0.0);	// no collision
 	if (c.object_index == 1) return ads_phong_lighting(r,c) * (texture(sampMoon, c.tc)).xyz;
@@ -568,6 +568,48 @@ if (c.object_index == 3)//天空盒，因此只需要返回纹理而无须加入光照
 		else if (c.face_index == 5) return ads_phong_lighting(r,c);
 	}
 */
+}
+
+//------------------------------------------------------------------------------
+// This function casts a ray into the scene and returns the final color for a pixel
+//------------------------------------------------------------------------------
+vec3 raytrace(Ray r)
+{	Collision c = get_closest_collision(r);
+	if (c.object_index == -1) return vec3(0.0);	// no collision
+	
+	if (c.object_index == 1)
+	{	// generate a secondary ray 在与球面发生碰撞时，通过生成次级光线来确定颜色
+		Ray reflected_ray;
+		reflected_ray.start = c.p + c.n * 0.001;//计算次级光线的起点，稍微偏移以避免与同一个物体发生碰撞
+		reflected_ray.dir = reflect(r.dir, c.n);
+		vec3 reflected_color = raytrace2(reflected_ray);
+		return ads_phong_lighting(r,c) * reflected_color;
+	}
+
+	if (c.object_index == 2) return ads_phong_lighting(r,c) * (texture(sampBrick, c.tc)).xyz;
+	
+	//if (c.object_index == 1) return ads_phong_lighting(r,c) * (texture(sampMoon, c.tc)).xyz;
+	/*
+	if (c.object_index == 2)
+	{	// generate a secondary ray
+		Ray reflected_ray;
+		reflected_ray.start = c.p + c.n * 0.001;
+		reflected_ray.dir = reflect(r.dir, c.n);
+		vec3 reflected_color = raytrace2(reflected_ray);
+		return ads_phong_lighting(r,c) * reflected_color;
+	}
+	*/
+	
+	if (c.object_index == 4) return ads_phong_lighting(r,c) * (checkerboard(c.tc)).xyz;
+	
+	if (c.object_index == 3)
+	{	if (c.face_index == 0) return texture(xnTex, c.tc).xyz;
+		else if (c.face_index == 1) return texture(xpTex, c.tc).xyz;
+		else if (c.face_index == 2) return texture(ynTex, c.tc).xyz;
+		else if (c.face_index == 3) return texture(ypTex, c.tc).xyz;
+		else if (c.face_index == 4) return texture(znTex, c.tc).xyz;
+		else if (c.face_index == 5) return texture(zpTex, c.tc).xyz;
+	}
 }
 
 void main()

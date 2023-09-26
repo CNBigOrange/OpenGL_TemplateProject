@@ -9,7 +9,7 @@
 #include "Utils.h"
 
 using namespace std;
-namespace RayTracePlane {
+namespace RayTraceSingleReflection {
 #define RAYTRACE_RENDER_WIDTH	800
 #define RAYTRACE_RENDER_HEIGHT	800
 
@@ -38,9 +38,9 @@ namespace RayTracePlane {
 	}
 }
 
-using namespace RayTracePlane;
+using namespace RayTraceSingleReflection;
 
-void init_RayTracePlane(GLFWwindow* window) {
+void init_RayTraceSingleReflection(GLFWwindow* window) {
 	Utils::displayComputeShaderLimits();
 
 	// Allocate the memory for the screen texture, and wipe its contacts
@@ -84,7 +84,7 @@ void init_RayTracePlane(GLFWwindow* window) {
 	glBindBuffer(GL_ARRAY_BUFFER, vbo2[1]);  // texture coordinates
 	glBufferData(GL_ARRAY_BUFFER, sizeof(windowQuadUVs), windowQuadUVs, GL_STATIC_DRAW);
 
-	raytraceComputeShader = Utils::createShaderProgram("RayCastingPlaneComputeShader.glsl");
+	raytraceComputeShader = Utils::createShaderProgram("RayCastingSingleReflectionComputeShader.glsl");
 	screenQuadShader = Utils::createShaderProgram("RayCastingVertShader.glsl", "RayCastingFragShader.glsl");
 
 	brickTexture = Utils::loadTexture("texture/brick1.jpg");
@@ -97,7 +97,7 @@ void init_RayTracePlane(GLFWwindow* window) {
 	znTex = Utils::loadTexture("cubeMap/zn.jpg");
 }
 
-void displayRayTracePlane(GLFWwindow* window, double currentTime) {
+void displayRayTraceSingleReflection(GLFWwindow* window, double currentTime) {
 	//=======================================================
 	// Call the Raytrace compute shader
 	//=======================================================
@@ -149,7 +149,7 @@ void displayRayTracePlane(GLFWwindow* window, double currentTime) {
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-int main48(void) {
+int main49(void) {
 	int wait;
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -161,10 +161,10 @@ int main48(void) {
 
 	glfwSetWindowSizeCallback(window, setWindowSizeCallback);
 
-	init_RayTracePlane(window);
+	init_RayTraceSingleReflection(window);
 
 	while (!glfwWindowShouldClose(window)) {
-		displayRayTracePlane(window, glfwGetTime());
+		displayRayTraceSingleReflection(window, glfwGetTime());
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
