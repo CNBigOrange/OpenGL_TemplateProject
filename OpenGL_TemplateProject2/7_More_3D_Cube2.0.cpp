@@ -95,6 +95,7 @@ void display3D_Cube2(GLFWwindow* window, double currentTime) {
 		glEnableVertexAttribArray(0);
 
 		//调整OpengGL设置，绘制模型
+		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);
 		glDepthFunc(GL_LEQUAL);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -109,7 +110,7 @@ int main7() {
 	//副版本号
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	//后两个参数分别是设置 允许全屏 和 资源共享
-	GLFWwindow* window = glfwCreateWindow(600, 600, "Chapter4 - program6", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(1000, 600, "Chapter4 - program6", NULL, NULL);
 	//将窗口与上下文关联起来
 	glfwMakeContextCurrent(window);
 

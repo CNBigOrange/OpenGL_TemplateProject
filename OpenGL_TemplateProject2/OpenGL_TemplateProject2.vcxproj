@@ -200,6 +200,8 @@
     <ClCompile Include="4_LoadGLSL_Code.cpp" />
     <ClCompile Include="50_RayCastingSingleRefraction.cpp" />
     <ClCompile Include="51_RayCastingReflectionRefraction.cpp" />
+    <ClCompile Include="52_RayCastingRecursion.cpp" />
+    <ClCompile Include="53_RayCastingMoreTemp.cpp" />
     <ClCompile Include="5_SimpleAnimation.cpp" />
     <ClCompile Include="6_First3D_Cube.cpp" />
     <ClCompile Include="7_More_3D_Cube2.0.cpp" />

@@ -21,14 +21,14 @@ float inc = 0.01f;
 void display3Points(GLFWwindow* window, double currentTime) {
 	glClear(GL_DEPTH_BUFFER_BIT);//每次将深度缓冲区清除
 
-	glClearColor(0.0, (x + 1) / 2, 0.0, 1.0);
+	glClearColor((x + 1) / 2, (x + 1) / 2, 0.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);//每次将颜色缓冲区清除
 
 	x += inc;
 	//沿x轴移动三角形
-	if (x > 1.0f)inc = -0.01f;
+	if (x > 0.7f)inc = -0.01f;
 	//切换至让三角形向左移动
-	if (x < -1.0f)inc = 0.01f;
+	if (x < -0.7f)inc = 0.01f;
 	//获取指向offset变量的指针
 	GLuint offsetLoc = glGetUniformLocation(renderingProgram, "offset");
 	//将x的值复制给offset

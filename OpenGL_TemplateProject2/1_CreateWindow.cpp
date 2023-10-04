@@ -18,7 +18,7 @@ int main1() {
 	//设置窗口的选项
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);//主版本号
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//副版本号
-	GLFWwindow* window = glfwCreateWindow(2000, 600, "Chapter2 - program1", NULL, NULL);//后两个参数分别是设置 允许全屏 和 资源共享
+	GLFWwindow* window = glfwCreateWindow(1000, 600, "Chapter2 - program1", NULL, NULL);//后两个参数分别是设置 允许全屏 和 资源共享
 	glfwMakeContextCurrent(window);//将窗口与上下文关联起来
 
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }

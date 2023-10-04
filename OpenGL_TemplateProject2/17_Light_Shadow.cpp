@@ -25,10 +25,10 @@ namespace light_Shadow {
 
 	float amt = 1.0f;
 
-	glm::vec3 pyrLoc(0.0f, -0.6f, 0.0f);
-	glm::vec3 modelLoc(0.0f, 0.1f, 2.5f);
+	glm::vec3 pyrLoc(0.0f, -0.5f, 0.0f);
+	glm::vec3 modelLoc(1.0f, 0.0f, 2.5f);
 	glm::vec3 cameraLoc(0.0f, -0.25f, 100.0f);
-	glm::vec3 lightLoc( 0.0f, 3.5f, 5.5f);
+	glm::vec3 lightLoc( 3.0f, 3.5f, 1.5f);
 
 	// variable allocation for display
 	GLuint mvLoc, projLoc, nLoc,sLoc;
@@ -436,7 +436,7 @@ int main17(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	GLFWwindow* window = glfwCreateWindow(800, 800, "Chapter 7 - program 1", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(1000, 600, "Chapter 7 - program 1", NULL, NULL);
 	glfwMakeContextCurrent(window);
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 	glfwSwapInterval(1);

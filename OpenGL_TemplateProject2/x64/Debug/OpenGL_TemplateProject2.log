@@ -1,7 +1,13 @@
 ﻿D:\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1101,5): warning MSB8027: 名为 Torus.cpp 的两个或更多文件将生成到同一位置的输出。这会导致错误的生成结果。   调用的文件是 ShapeClass\Torus.cpp, Torus.cpp。
-  51_RayCastingReflectionRefraction.cpp
+  52_RayCastingRecursion.cpp
 E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\51_RayCastingReflectionRefraction.cpp(99,22): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\52_RayCastingRecursion.cpp(99,22): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  53_RayCastingMoreTemp.cpp
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_common.inl(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGLtemplate\include\glm\core\func_integer.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\OpenGL_TemplateProject2\53_RayCastingMoreTemp.cpp(99,22): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  正在生成代码...
   OpenGL_TemplateProject2.vcxproj -> E:\OpenGL\OpenGL_TestProjects\OpenGL_TemplateProject\x64\Debug\OpenGL_TemplateProject2.exe

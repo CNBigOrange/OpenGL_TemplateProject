@@ -106,7 +106,7 @@ int main6( ) {
 	//副版本号
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	//后两个参数分别是设置 允许全屏 和 资源共享
-	GLFWwindow* window = glfwCreateWindow(600, 600, "Chapter4 - program6", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(1000, 600, "Chapter4 - program6", NULL, NULL);
 	//将窗口与上下文关联起来
 	glfwMakeContextCurrent(window);
 

@@ -4,6 +4,8 @@ layout (local_size_x=1) in;//工作组大小为1
 layout (binding=0, rgba8) uniform image2D output_texture;
 float camera_pos = 5.0;
 
+uniform float time;
+
 struct Ray//定义光线
 {	vec3 start;	// origin of the ray 光线原点
 	vec3 dir;	// normalized direction of the ray 归一化后的光线方向

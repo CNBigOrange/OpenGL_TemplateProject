@@ -27,6 +27,7 @@ namespace RayCastingADS {
 #define numVBOs 2
 	GLuint vao2[numVAOs];
 	GLuint vbo2[numVBOs];
+	GLuint offSet;
 
 	GLuint screenQuadShader, raytraceComputeShader;
 
@@ -90,6 +91,9 @@ void displayRayCastingADS(GLFWwindow* window, double currentTime) {
 	// Call the Raytrace compute shader
 	//=======================================================
 	glUseProgram(raytraceComputeShader);
+
+	offSet = glGetUniformLocation(raytraceComputeShader, "time");
+	glUniform1f(offSet, currentTime);
 
 	// Bind the screen_texture_id texture to an image unit as the compute shader's output 将screenTextureID纹理绑定到OpenGL图像单元作为计算着色器的输出
 	glBindImageTexture(0, screenTextureID, 0, GL_FALSE, 0, GL_WRITE_ONLY, GL_RGBA8);
